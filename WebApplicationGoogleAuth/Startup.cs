@@ -33,12 +33,16 @@ namespace WebApplicationGoogleAuth
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddRazorPages();
-
+            //Add This chunk to Add Authentication and then add each individual OAuth type that will be used
+            //in the projector, such as Google, Facebook, Twitter..
+            //The = Configuration[" *this "]; *this part is pointing to secrets that contain the 
+            //Google Cloud App Client ID and ClientSecret
+            //You must configure your Google App yourself : https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/google-logins?view=aspnetcore-6.0
             services.AddAuthentication().AddGoogle(googleOptions =>
             {
                 googleOptions.ClientId = Configuration["Authentication:Google:ClientId"];
                 googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
-            });
+            });//end add authentication
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,9 +64,10 @@ namespace WebApplicationGoogleAuth
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            //Ensure These two lines exist here
             app.UseAuthentication();
             app.UseAuthorization();
+            //.
 
             app.UseEndpoints(endpoints =>
             {
