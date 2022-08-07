@@ -1,6 +1,27 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+.shadow {
+    box-shadow: 0rem .21rem 4rem .75rem rgba(0, 0, 0, 0.51) !important;
+}
+.navbar {
+    padding: 25px;
+    margin: 0px;
+}
+.nav-item:hover {
+    
+    background-color: rgb(53 160 121);
+    border-color: rgb(53 160 121);
+    box-shadow: 0rem .2rem 0.50rem .2rem rgb(21 76 86 / 0.32) !important;
+}
+a.text-dark:hover {
+    color: #ffff !important;
+}
+.primary-bg-color {
+    background-color: #392a55;
+}
+
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -9,19 +30,29 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+  color: #00b271;
+}
+
+a:hover {
+    color: rgb(226 140 3);
 }
 
 .btn-primary {
   color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  background-color: #392a55;
+  border-color: rgb(21 76 86 / 1.00);
 }
+
+    .btn-primary:hover {
+        background-color: rgb(53 160 121);
+        border-color: rgb(53 160 121);
+        box-shadow: 0rem .2rem 0.50rem .2rem rgb(21 76 86 / 0.32) !important;
+    }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  background-color: rgb(21 76 86 / 1.00);
+  border-color: #392a55;
 }
 
 /* Sticky footer styles
